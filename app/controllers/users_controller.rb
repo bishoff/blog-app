@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       format.xml { render xml: @users }
       format.yaml { render :text => @users.to_yaml}
       format.rss  { render :rss => @users }
-      format.js   { render :js => "alert('hello');", :content_type => 'text/javascript' }
+      # format.js   { render :js => "alert('hello');", :content_type => 'text/javascript' }
     end
   end
 
