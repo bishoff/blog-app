@@ -1,4 +1,5 @@
-<%= form_for(@post) do |f| %>
+<%= form_for @post do |f| %>
+  
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -19,11 +20,18 @@
     <%= f.label :content %><br />
     <%= f.text_area :content %>
   </div>
-  <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
+
+  <div class="categories">
+    <% @categories.each do |category| %>
+      <div class="field">
+        <%= check_box_tag 'post[category_ids][]', category.id, @post.category_ids.include?(category.id) %>
+        <%= label 'post', 'category_ids', h(category.name), :value => category.id %>
+      </div>
+    <% end %>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>

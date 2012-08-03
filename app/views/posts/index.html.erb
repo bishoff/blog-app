@@ -1,27 +1,20 @@
-<h1>Listing posts</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Content</th>
-    <th>User</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
 <% @posts.each do |post| %>
-  <tr>
-    <td><%= post.title %></td>
-    <td><%= post.content %></td>
-    <td><%= post.user_id %></td>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+  <h1 class = 'post-title'>
+    <%= link_to post.title, post %>
+  </h1>
 
+  <% if @current_user == post.user %>
+    <span class = 'post-menu'>Posted by <%= link_to post.user.login, post.user %> |
+      <%= link_to 'edit', edit_post_path(post), :class => 'edit-link' %>
+      <%= link_to 'delete', post, :confirm => 'Are you sure?', :method => :delete, :class => 'delete-link' %>
+    </span>
+  <% end %>
+
+  <%= post.content %>
+
+  <br />
+  
+  <hr />
+  <% end %>
 <br />
-
-<%= link_to 'New Post', new_post_path %>
+<span class = 'new-link'><%= link_to 'New Post', new_post_path %></span>

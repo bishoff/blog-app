@@ -1,0 +1,5 @@
+<div id = 'comments'>
+  <h3><%= @post.comments_counter %> Comments</h3>
+  <hr />
+  <%= render :partial => "comment", :collection => @post.comments %>
+</div>

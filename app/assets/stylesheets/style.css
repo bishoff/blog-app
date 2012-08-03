@@ -1,0 +1,178 @@
+body, p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size:   13px;
+  line-height: 18px;}
+
+body {
+  margin:0;
+  padding:0;
+  background-color:#111}
+#container {
+  margin: 0 auto;
+  width: 960px;
+  background: #eee;}
+
+#header {
+  background: #111;
+  padding: 20px;}
+
+#header h1 { margin: 0; color:#fefefe}
+
+#navigation {
+  float:left;
+  width:100%;
+  background:#000;}
+
+#content-container {
+  float: left;
+  width: 960px;
+  background-color:#eee;}
+
+#content {
+  clear: left;
+  float: left;
+  width: 560px;
+  padding: 20px 0;
+  margin: 20px;
+  padding: 20px;
+  background-color:#fff;}
+
+#content h2 { margin: 0; }
+
+#right-bar{
+  float: right;
+  width: 260px;
+  margin: 20px 20px 20px 0;
+  padding: 20px;
+  background-color:#222;
+  color: #ddd;}
+
+#categories-list{}
+
+#categories-list > h1{
+  color:#fff;
+  font-size:1.5em;}
+
+#categories-list > a{
+  color:#6b2;
+  font-size:16px;}
+
+
+#footer {
+  clear: left;
+  background: #000;
+  text-align: right;
+  padding: 20px;
+  height: 1%;
+  color:#eee;}
+
+div.user{
+  border:1px solid #dfdfdf;
+  padding:5px;
+  margin:0 0 5px;}
+
+div#comments{
+  background-color:#eee;
+  padding:20px;}
+
+div.comment{
+  margin:0 -1px 10px 0;
+  padding:10px 0 0 10px;
+  border:1px solid #dfdfdf;
+  background-color:#fff;}
+
+div.comment-header{
+  background-color: #f9f9f9;
+  margin: -10px 0 0 -10px;
+  padding:10px 0 10px 10px;
+  color: #ccc;
+  font-size: .8em;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+div.comment-text{
+  margin: 0;
+  padding: 10px 0;
+}
+
+div.comment-header > b{
+  font-size: 1.3em;
+  color: #333;
+}
+
+h1.post-title{
+  margin:0;
+  padding:0;}
+
+h1.post-title > a{
+  color:#555;
+  font-size:0.8em;
+  text-decoration:none;}
+
+h1.post-title > a:hover{
+  color:#6b2;
+  font-size:0.8em;
+  text-decoration:none;}
+
+span.post-menu{
+  display:block;
+  margin:5px 0;
+  padding:1px 5px;
+  background:#252525;
+  border:1px solid #000;
+  color:#444;}
+
+span.post-menu > a{
+  color:#666}
+
+
+a.delete-link{
+  display:inline;
+  margin:0;
+  padding:.2em .5em;
+  background: #111;
+  border: 1px solid #000;
+  font-size: 10px;
+  text-decoration: none;}
+
+a.delete-link:hover{
+  color:#fff;
+  background: #d22;
+  border:1px solid #a22}
+
+a.edit-link{
+  display:inline;
+  margin:0;
+  padding:.2em .5em;
+  background: #111;
+  border: 1px solid #000;
+  font-size: 10px;
+  text-decoration: none;}
+
+a.edit-link:hover{
+  color:#fff;
+  background: #f51;
+  border:1px solid #a22}
+
+span.new-link > a{
+  display:inline;
+  float:right;
+  margin:0;
+  padding:.2em .5em;
+  color:#fff;
+  background:#6b2;
+  border: 1px solid #3a3;
+  font-size: 1.2em;}
+
+a{
+  color:#05f;
+  size:10px;}
+
+
+
+
+
+
+
+
+

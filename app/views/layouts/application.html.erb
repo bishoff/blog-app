@@ -1,5 +1,36 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Test Blog</title>
+    <%= stylesheet_link_tag "application", :media => "all" %>
+
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tag %>
+  </head>
+  <body>
+    <div id="container">
+      <div id="header">
+        <h1><a href="/">Test Blog</a></h1>
+      </div>
+      <div id="navigation">
+       navigation here
+      </div>
+      <div id="content-container">
+        <div id="content">
+          <%= yield %>
+        </div>
+        <div id="right-bar">
+          <%= render 'layouts/categories_list' %>
+        </div>
+        <div id="footer">
+          © Valikos ©
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<!-- <!DOCTYPE html>
+<html>
 <head>
   <title>Blog</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
@@ -11,4 +42,4 @@
 <%= yield %>
 
 </body>
-</html>
+</html> -->

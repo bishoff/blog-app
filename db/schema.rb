@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120802075114) do
+ActiveRecord::Schema.define(:version => 20120803074926) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -23,16 +23,30 @@ ActiveRecord::Schema.define(:version => 20120802075114) do
   create_table "category_posts", :force => true do |t|
     t.integer  "post_id"
     t.integer  "category_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+    t.integer  "posts_counter", :default => 0
   end
+
+  create_table "comments", :force => true do |t|
+    t.string   "title"
+    t.text     "comment"
+    t.integer  "user_id"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  add_index "comments", ["commentable_id", "commentable_type"], :name => "index_comments_on_commentable_id_and_commentable_type"
 
   create_table "posts", :force => true do |t|
     t.string   "title"
     t.text     "content"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.integer  "comments_counter"
   end
 
   create_table "users", :force => true do |t|
