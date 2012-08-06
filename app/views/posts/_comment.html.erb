@@ -3,14 +3,14 @@
     <b><%= comment.title %></b><br />
     posted by <%= link_to comment.user.login, comment.user %>,
     posted at: <%= comment.created_at.to_formatted_s(:short)%>
-    <% if comment.user == @current_user %>
+    <% if comment.user == current_user %>
       <%= link_to("delete", comment_path(comment, { :post_id => @post.id }), :method => :delete) %>
     <% end %>
   </div>
   <div class="comment-text">
     <%= comment.comment %>
     <br />
-    <%= link_to "reply", new_comment_path({:comment => {:commentable_id => comment.id, :commentable_type => "Comment"}, :post_id => @post.id }) %>
+    <%= link_to "reply", new_comment_path({:comment => {:commentable_id => comment.id, :commentable_type => "Comment"}, :post_id => @post.id }) if user_signed_in? %>
   </div>
   <%= render :partial => "comment", :collection => comment.comments %>
 </div>

@@ -58,5 +58,7 @@ module Blog
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.secret_token = '647bde4af139799385fecfaeefa09ff6c9db27260b28233f08afa5f844c129361a4c4c8fc7500e2eb7789d984ba79fea6dade49de8ff4ee72c00cfa793a667c0'
   end
 end

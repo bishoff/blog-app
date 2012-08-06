@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
   layout 'application'
   def initialize
     super
-    @current_user = User.first
     @categories = Category.all
   end
 end

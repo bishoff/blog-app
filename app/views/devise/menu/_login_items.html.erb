@@ -1,0 +1,5 @@
+<% if user_signed_in? %>
+  <span style="color:white">Signed in as <%= current_user.login%>. Not you?</span> <%= link_to('SignOut', destroy_user_session_path, :method => :delete) %>        
+<% else %>
+  <%= link_to('SignUp', new_user_registration_path)  %> or <%= link_to('SignIn', new_user_session_path) %> 
+<% end %>

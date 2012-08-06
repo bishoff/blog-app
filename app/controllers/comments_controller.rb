@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
 
   def new
     @comment = Comment.new(params[:comment])
-    @comment.user = @current_user
+    @comment.user = current_user
   end
 
   # GET /comments/1/edit

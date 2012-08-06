@@ -1,9 +1,12 @@
+<%= paginate @posts %>
+<span class = 'new-link'><%= link_to 'New Post', new_post_path %></span>
+
 <% @posts.each do |post| %>
   <h1 class = 'post-title'>
     <%= link_to post.title, post %>
   </h1>
 
-  <% if @current_user == post.user %>
+  <% if current_user == post.user %>
     <span class = 'post-menu'>Posted by <%= link_to post.user.login, post.user %> |
       <%= link_to 'edit', edit_post_path(post), :class => 'edit-link' %>
       <%= link_to 'delete', post, :confirm => 'Are you sure?', :method => :delete, :class => 'delete-link' %>
@@ -17,4 +20,6 @@
   <hr />
   <% end %>
 <br />
+
+<%= paginate @posts %>
 <span class = 'new-link'><%= link_to 'New Post', new_post_path %></span>

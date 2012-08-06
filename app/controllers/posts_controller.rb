@@ -1,6 +1,7 @@
   class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    # @posts = Post.all
+    @posts = Post.order("title").page(params[:page]).per(5)
   end
  
   def show
@@ -18,7 +19,7 @@
  
   def create
     @post = Post.new(params[:post])
-    @post.user = @current_user
+    @post.user = current_user
     @post.save ? redirect_to(@post, :notice => 'Post was successfully created.') : render(:action => "new")
   end
  

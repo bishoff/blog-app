@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <h1 class = 'post-title'> <%= @post.title %> </h1>
 <b>Posted by:</b> <%= link_to @post.user.login, @post.user %> |
-<% if @current_user == @post.user %>
+<% if current_user == @post.user %>
   <%= link_to 'Edit', edit_post_path(@post) %>
 <% end %>
 <br />
@@ -9,4 +9,4 @@
 <br />
 <%= link_to 'Back', posts_path %>
 <%= render 'comments' %>
-<%= render 'comments_form' %>
+<%= render 'comments_form' if user_signed_in? %>
